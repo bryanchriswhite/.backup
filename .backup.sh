@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#######################################################################################
+### See the documentation for more info: https://github.com/bryanchriswhite/.backup ###
+#######################################################################################
+
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 ### Load config file containing vars
