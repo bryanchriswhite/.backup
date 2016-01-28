@@ -47,3 +47,11 @@ The `.config` file contains the following variables:
 | `SIGNEE` | Email address (or key ID) of private key used to sign **both** asymmetrically **and** symmetrically encrypted discrete tarballs (_only one signature can be used for all tarballs_) | `bryanchriswhite@gmail.com` |
 | `ASYM_INPUTS` | Newline delimited list of all discrete directories/files to be `tar`'d, compressed, and **asymmetrically** encrypted in [step 1](#methodology) _(such that `RECIPIENTS` are able to decrypt them)_ | _[see `.config.example`](https://github.com/bryanchriswhite/.backup/blob/master/.config.example#L14) - (markdown tables don't allow explicit multi-line cells)_ |
 | `SYM_INPUTS` | Newline delimited list of all discrete directories/files to be `tar`'d, compressed, and **symmetrically** encrypted in [step 1](#methodology) using a passphrase; _(you will be prompted to enter a passphrase for each discrete directory/file [i.e. line in this multi-line variable])_ | _[see `.config.example`](https://github.com/bryanchriswhite/.backup/blob/master/.config.example#L23) - (markdown tables don't allow explicit multi-line cells)_ |
+
+Use
+---
+Give yourself execute permission on the `.backup.sh` file: `chmod u+x .backup.sh` (_still assuming you cloned into `~/.backup` and are `cd`'d there_)
+
+Now that you've configured your installation you may run the script:
+* Directly: `./.backup.sh`
+* Pass it to bash: `bash ./.backup.sh`
