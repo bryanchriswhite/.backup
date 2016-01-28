@@ -20,16 +20,18 @@ RECIPIENTS='bryanchriswhite@gmail.com'
 
 
 ### List of dirs/files to be asymmetrically encrypted with gpg
+# NOTE: use of double quotes is required for bash variable interpolation
 
-ASYM_INPUTS='
-.ssh
-.aws
-.password-store
-'
+ASYM_INPUTS="
+$HOME/.ssh
+$HOME/.aws
+$HOME/.password-store
+"
 
 
 ### List of dirs/files to be symmetrically encrypted with gpg (i.e. using a passphrase [you will be prompted for each])
+# NOTE: use of double quotes is required for bash variable interpolation
 
-SYM_INPUTS='
-.gnupg
-'
+SYM_INPUTS="
+$HOME/.gnupg
+"
