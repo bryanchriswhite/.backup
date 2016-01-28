@@ -3,11 +3,22 @@
 
 BACKUP_DIR=$HOME/.backup
 
+
+### Space delimited list of gpg recipients (email addresses or key IDs) used for asymmetric encryption
+
+RECIPIENTS='bryanchriswhite@gmail.com'
+
+
+### List of dirs/files to be asymmetrically encrypted with gpg
+
 ASYM_INPUTS='
 .ssh
 .aws
 .password-store
 '
+
+
+### List of dirs/files to be symmetrically encrypted with gpg (i.e. using a passphrase [you will be prompted for each])
 
 SYM_INPUTS='
 .gnupg
