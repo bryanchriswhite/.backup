@@ -37,8 +37,8 @@ done
 
 ### Create final tarball of encrypted files
 
-tar -cvf $BACKUP_DIR/$BACKUP_OUTPUT_FILE .*.gpg
-chmod 600 $BACKUP_DIR/$BACKUP_OUTPUT_FILE
+tar -cvf $BACKUP_OUTPUT_DIR/$BACKUP_OUTPUT_FILE .*.gpg
+chmod 600 $BACKUP_OUTPUT_DIR/$BACKUP_OUTPUT_FILE
 
 
 ### Cleanup temp directory
