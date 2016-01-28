@@ -37,7 +37,7 @@ do
   read -sp "Enter passphrase for $SYM_INPUT: " PASSPHRASE
   echo
   cd $DIRNAME
-  tar -cJ $BASENAME 2>/dev/null | gpg --passphrase $PASSPHRASE -c -o $TEMP_DIR/$BASENAME.txz.gpg
+  tar -cJ $BASENAME 2>/dev/null | gpg --cipher-algo AES256 --passphrase $PASSPHRASE -c -o $TEMP_DIR/$BASENAME.txz.gpg
 done
 
 
