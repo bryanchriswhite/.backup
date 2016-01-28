@@ -16,7 +16,12 @@ BACKUP_OUTPUT_FILE=.keys_backup.tar
 
 ### Space delimited list of gpg recipients (email addresses or key IDs) used for asymmetric encryption
 
-RECIPIENTS='bryanchriswhite@gmail.com'
+RECIPIENTS='bryanchriswhite@gmail.com bryan@liminal.ly'
+
+
+### Email address (or key ID) of private key used to sign asymmetrically and symmetrically encrypted outputs
+
+SIGNEE='bryanchriswhite@gmail.com'
 
 
 ### List of dirs/files to be asymmetrically encrypted with gpg

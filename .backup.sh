@@ -23,7 +23,7 @@ do
   BASENAME=`basename $ASYM_INPUT`
   DIRNAME=`dirname $ASYM_INPUT`
   cd $DIRNAME
-	tar -cJ $BASENAME 2>/dev/null | gpg -er $RECIPIENTS -o $TEMP_DIR/$BASENAME.txz.gpg
+	tar -cJ $BASENAME 2>/dev/null | gpg -su $SIGNEE -er ${RECIPIENTS// / -r } -o $TEMP_DIR/$BASENAME.txz.gpg
 done
 
 
@@ -34,10 +34,7 @@ do
   BASENAME=`basename $SYM_INPUT`
   DIRNAME=`dirname $SYM_INPUT`
   cd $DIRNAME
-  read -sp "Enter passphrase for $SYM_INPUT: " PASSPHRASE
-  echo
-  cd $DIRNAME
-  tar -cJ $BASENAME 2>/dev/null | gpg --cipher-algo AES256 --passphrase $PASSPHRASE -c -o $TEMP_DIR/$BASENAME.txz.gpg
+  tar -cJ $BASENAME 2>/dev/null | gpg --cipher-algo AES256 -sc -u $SIGNEE -o $TEMP_DIR/$BASENAME.txz.gpg
 done
 
 
