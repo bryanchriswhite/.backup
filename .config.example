@@ -1,0 +1,14 @@
+### User defined variables
+### NOTE: set these for your personal environment
+
+BACKUP_DIR=$HOME/.backup
+
+ASYM_INPUTS='
+.ssh
+.aws
+.password-store
+'
+
+SYM_INPUTS='
+.gnupg
+'
