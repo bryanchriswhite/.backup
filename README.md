@@ -41,7 +41,8 @@ The `.config` file contains the following variables:
 
 | Variable Name | Purpose | Example |
 |---------------|---------|---------|
-| `BACKUP_DIR` | Destination where final tarball will be output (_NOTE: must **not** have a trailing `/`_) | `$HOME/.backup` |
+| `BACKUP_OUTPUT_DIR` | Destination where final tarball will be output (_NOTE: must **not** have a trailing `/`_) | `$HOME/.backup` |
+| `BACKUP_OUTPUT_FILE` | Final output tarball filename | `.keys_backup.tar` |
 | `RECIPIENTS` | Space delimited list of email addresses or GPG key IDs to be used for **all** asymmetric encryption of discrete tarballs | `bryanchriswhite@gmail.com` |
 | `ASYM_INPUTS` | Newline delimited list of all discrete directories/files to be `tar`'d, compressed, and **asymmetrically** encrypted in [step 1](#methodology) _(such that `RECIPIENTS` are able to decrypt them)_ | _[see `.config.example`](https://github.com/bryanchriswhite/.backup/blob/master/.config.example#L14) - (markdown tables don't allow explicit multi-line cells)_ |
 | `SYM_INPUTS` | Newline delimited list of all discrete directories/files to be `tar`'d, compressed, and **symmetrically** encrypted in [step 1](#methodology) using a passphrase; _(you will be prompted to enter a passphrase for each discrete directory/file [i.e. line in this multi-line variable])_ | _[see `.config.example`](https://github.com/bryanchriswhite/.backup/blob/master/.config.example#L23) - (markdown tables don't allow explicit multi-line cells)_ |
