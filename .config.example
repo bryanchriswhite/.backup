@@ -7,7 +7,7 @@
 
 ### Output directory
 
-BACKUP_DIR=$HOME/.backup
+BACKUP_OUTPUT_DIR=$HOME/.backup
 
 
 ### Output tarball filename
