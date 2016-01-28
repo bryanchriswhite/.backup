@@ -32,7 +32,7 @@ Setup
  ```bash
  cp .config.example .config
  ```
-1. Modify the newly created `.config` file's variables to suite your requirements
+1. Modify the newly created `.config` file's variables to suite your requirements; see the [configure](#configure) section below
 
 
 Configure
