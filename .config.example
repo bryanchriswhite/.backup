@@ -5,8 +5,14 @@
 ### User defined variables
 ### NOTE: set these for your personal environment
 
+### Output directory
+
 BACKUP_DIR=$HOME/.backup
 
+
+### Output tarball filename
+
+BACKUP_OUTPUT_FILE=.keys_backup.tar
 
 ### Space delimited list of gpg recipients (email addresses or key IDs) used for asymmetric encryption
 
