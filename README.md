@@ -36,13 +36,13 @@ Setup
 1. Add the `bin` directory to your path
 
  ```bash
- echo 'PATH=$PATH:~/.backup/bin # Assumes clone destination is `~/.backup`'
+ echo 'PATH=$PATH:~/.backup/bin # Assumes clone destination is `~/.backup`' >> ~/.bashrc # Or .zshrc, etc.
  ```
  _NOTE: File `bin/.backup` is a symlink so you may rename the command avialble via your path simply by renaming this file_
 
 Configure
 ---------
-The `.config` file contains the following variables:
+The `config` file contains the following variables:
 
 | Variable Name | Purpose | Example |
 |---------------|---------|---------|
@@ -55,7 +55,9 @@ The `.config` file contains the following variables:
 
 Use
 ---
-Give yourself execute permission on the `.bin/.backup` file: `chmod u+x .bin/.backup.sh` (_still assuming you cloned into `~/.backup` and are `cd`'d there_)
+Now that you've configured your installation you may simply run the script:
+```bash
+.backup` # Or whatever you renamed `bin/.backup` to
+```
 
-Now that you've configured your installation you may run the script:
-* `.backup` # Or whatever you renamed `bin/.backup` to
+_You may need to give yourself execute permission on the `.bin/.backup` file: `chmod u+x .bin/.backup.sh` (still assuming you cloned into `~/.backup` and are `cd`'d there)_
