@@ -27,13 +27,18 @@ Setup
  git clone git@github.com/bryanchriswhite/.backup ~/.backup ## Replace "~/.backup" with the desired destination (optional)
  cd !!:3 ## Change directory to the destination (for subsequent steps [optional])
  ```
-1. Copy the `.config.example` file to `.config`
+1. Copy the `config.example` file to `config`
  
  ```bash
- cp .config.example .config
+ cp config.example config
  ```
-1. Modify the newly created `.config` file's variables to suite your requirements; see the [configure](#configure) section below
+1. Modify the newly created `config` file's variables to suite your requirements; see the [configure](#configure) section below
+1. Add the `bin` directory to your path
 
+ ```bash
+ echo 'PATH=$PATH:~/.backup/bin # Assumes clone destination is `~/.backup`'
+ ```
+ _NOTE: File `bin/.backup` is a symlink so you may rename the command avialble via your path simply by renaming this file_
 
 Configure
 ---------
@@ -41,7 +46,7 @@ The `.config` file contains the following variables:
 
 | Variable Name | Purpose | Example |
 |---------------|---------|---------|
-| `BACKUP_OUTPUT_DIR` | Destination where final tarball will be output (_NOTE: must **not** have a trailing `/`_) | `$HOME/.backup` |
+| `BACKUP_OUTPUT_DIR` | Destination where final tarball will be output (_NOTE: must **not** have a trailing `/`_) | `$HOME/.backup/output` |
 | `BACKUP_OUTPUT_FILE` | Final output tarball filename | `.keys_backup.tar` |
 | `RECIPIENTS` | Space delimited list of email addresses or GPG key IDs to be used for **all** asymmetric encryption of discrete tarballs | `bryanchriswhite@gmail.com bryan@liminal.ly` |
 | `SIGNEE` | Email address (or key ID) of private key used to sign **both** asymmetrically **and** symmetrically encrypted discrete tarballs (_only one signature can be used for all tarballs_) | `bryanchriswhite@gmail.com` |
@@ -50,8 +55,7 @@ The `.config` file contains the following variables:
 
 Use
 ---
-Give yourself execute permission on the `.backup.sh` file: `chmod u+x .backup.sh` (_still assuming you cloned into `~/.backup` and are `cd`'d there_)
+Give yourself execute permission on the `.bin/.backup` file: `chmod u+x .bin/.backup.sh` (_still assuming you cloned into `~/.backup` and are `cd`'d there_)
 
 Now that you've configured your installation you may run the script:
-* Directly: `./.backup.sh`
-* Pass it to bash: `bash ./.backup.sh`
+* `.backup` # Or whatever you renamed `bin/.backup` to
