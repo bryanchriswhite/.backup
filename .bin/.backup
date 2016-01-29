@@ -45,6 +45,10 @@ cd $TEMP_DIR
 
 ### Create final tarball of encrypted files
 
+if [ ! -d "$BACKUP_OUTPUT_DIR" ]; then
+  mkdir -p $BACKUP_OUTPUT_DIR
+fi
+
 tar -cvf $BACKUP_OUTPUT_DIR/$BACKUP_OUTPUT_FILE .*.gpg
 chmod 600 $BACKUP_OUTPUT_DIR/$BACKUP_OUTPUT_FILE
 

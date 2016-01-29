@@ -1,3 +1,4 @@
 *.swp
 .keys_backup.tar
 config
+output
